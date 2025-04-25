@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/output.css">
+    <link rel="stylesheet" href="assets/icon/css/fontello.css">
+</head>
+<body>
+    <section class="flex justify-center ">
+        <div class="w-[500px] min-h-[300px] *:w-full my-20 bg-[#F86C6A] flex flex-wrap content-between shadow-2xl">
+            <div class=" p-10">
+                <h1 class="text-5xl">Todo List</h1>
+                <h3 class="text-lg my-3">Get things done, one item at a time.</h3>
+                <hr class="text-white">
+            </div>
+            <div >
+                <ul id="myList" class="w-full ">
+                    <li class="myLi">no item</li> 
+                </ul>
+            </div>
+            <div class="w-full p-8 ">
+                <h2 class="text-2xl my-4">Add to the todo list</h2>
+                <input id="myinp" type="text" class="bg-white w-[300px] h-[50px]">
+                <button onclick="newTask()" class="w-[100px] h-[50px] border-1 border-[#FA9897] uppercase text-white ">add item</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const input = document.getElementById('myinp')
+    const btn = document.querySelector('buttom')
+    const list = document.getElementById('myList')
+    let flag = true
+
+   
+    function newTask(){
+        const task = input.value
+
+        if(task == ''){
+            alert('pleas write your task')
+        }else{
+            if(flag){
+                list.innerHTML=''
+                flag = false
+            }
+
+            const li = document.createElement('li')
+            li.classList.add('myLi')
+            li.innerHTML=`
+                <b>${task}</b>
+                <div>
+                    <input onclick="done(this)" type="checkbox" class="myCheck"/>
+                    <span onclick="del(this)" class="icon-trash icon "></span>
+                </div>
+            `
+            list.appendChild(li)
+            input.value=null
+            input.focus()
+        }
+        
+        
+    }
+    
+
+    function done(s){
+        if(s.checked){
+            s.parentElement.previousElementSibling.style.textDecoration='line-through'
+            s.parentElement.previousElementSibling.style.color='#FDCAC9'
+        }else{
+            s.parentElement.previousElementSibling.style.textDecoration='none'
+            s.parentElement.previousElementSibling.style.color='white'
+
+        }
+    }
+
+    function del(s){
+        if(confirm('sure?')){
+            s.parentElement.parentElement.remove()
+        }
+    }
+
+</script>
+</html>

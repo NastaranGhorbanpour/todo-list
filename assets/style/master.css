@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer base{
+    h1,h2,h3,h4,p{
+        @apply font-[lato] text-white
+    }
+    li{
+        @apply font-[lato-light] text-white
+    }
+}
+@layer components{
+    .myLi{
+        @apply relative w-full h-[70px] uppercase bg-[#F97B79] my-1 px-10 flex items-center justify-between text-2xl
+    }
+    .icon{
+        @apply text-white 
+    }
+    
+}
+
+
+@font-face {
+    font-family: lato;
+    src: url(../font/Lato-Regular.ttf);
+}
+@font-face {
+    font-family: lato-light;
+    src: url(../font/Lato-Light.ttf);
+}
