@@ -1,6 +1,6 @@
 # todo-list
 ### responsive
-![Image](https://github.com/user-attachments/assets/5a42d878-2e5c-43eb-8f81-04cc7183847f)
+![Image](https://github.com/user-attachments/assets/d1734fc1-92c9-4639-a60b-417ce29c6110)
  
 - [Demo Project](https://nastaranghorbanpour.github.io/todo-list/)
 - Developed by Nastaran Ghorbanpour
